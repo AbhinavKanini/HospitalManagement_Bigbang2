@@ -1,10 +1,8 @@
 import './DoctorProfileCard.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import React from 'react';
-import AdminLandingPage from './Landingpage';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-import emailicon from "../Images/email.png"
 import phoneicon from "../Images/phone.png"
 const Card = (props) => {
   const navigate = useNavigate();
@@ -45,22 +43,19 @@ const Card = (props) => {
 
 
   const handleApproval = (name, email) => {
-    // Send email using EmailJS
     const parameters = {
       to_name: name,
 
     }
-    emailjs.send('service_zz6kap7', 'template_4ny8lfp', {
+    emailjs.send("service_ams6xyv","template_6betqpa",{
       to_email: email,
       message: 'Congratulations! You have been approved.',
     }, 'UgzF3mGun7u50STTQ')
       .then(() => {
         console.log('Email sent successfully!');
-        // Perform any additional actions or show success message to the admin
       })
       .catch((error) => {
         console.error('Error sending email:', error);
-        // Handle error or show error message to the admin
       });
 
   };
@@ -87,7 +82,6 @@ const Card = (props) => {
               console.log(props.c.name, props.c.users.email)
               handleApproval(props.c.name, props.c.users.email,);
               alert("Approved")
-              // window.location.reload();
             }}
               value="approved">Approve</button>
 
@@ -100,7 +94,6 @@ const Card = (props) => {
               changestatus(doctorData);
               console.log(props.c.name, props.c.users.email)
               alert("Not Approved")
-              // window.location.reload();
             }}
               value="approved">DisApprove</button> </>
 

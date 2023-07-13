@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import './Register.css'
-import { useDispatch } from "react-redux";
-//  import { addUser } from "../HospitalSlice"
-// import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
-import registerbg from '../Images/registerbg.jpg'
+
 
 
 
@@ -13,12 +10,10 @@ function Register() {
 
 
 
-    // const inputRef=useRef(null);
     const [role, setRole] = useState("");
 
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordToggle, setPasswordToggle] = useState(false);
-    //var dispatch=useDispatch();
     var myData;
 
     var checkPassword = () => {
@@ -111,12 +106,10 @@ function Register() {
             .then(async (data) => {
                 if (data.status == 201) {
                     myData = await data.json();
-                    // dispatch(addUser(myData));
                     settingLocalStorage();
                     console.log(myData);
                     navigate("/PatientLandingPage")
 
-                    // navigate("/second/"+myData.gender)
 
                 }
             })
@@ -158,15 +151,6 @@ function Register() {
         <body class="body-register">
             <section class="container-register">
                 <div className="form">
-
-
-                    {/* <select defaultValue={'DEFAULT'} onChange={(event)=>{
-                    setRole(event.target.value)
-                }}>
-                    <option value="DEFAULT" disabled>Choose....</option>
-                    <option value='doctor'>doctor</option>
-                    <option value='patient'>patient</option>
-                </select> */}
                     <center><h2 > Registration form</h2> </center>
 
                     <div class="input-box">

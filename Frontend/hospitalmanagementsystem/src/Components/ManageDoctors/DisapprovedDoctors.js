@@ -37,7 +37,7 @@ function DisapprovedDoctors() {
             <nav className="navbar">
                 <div className="navbar-logo">
 
-                    <a href="/">Lifeline Hospital</a>
+                    <a href="/">Apollo Hospital</a>
                 </div>
                 <ul className="navbar-menu">
                     <li className="navbar-item">
